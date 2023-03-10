@@ -1,25 +1,25 @@
-
-<div class="navbar navbar-light bg-light py-3">
+<div class="navbar navbar-light bg-light p-3">
         <i class="fa-solid fa-clapperboard font-size: 1rem"></i>
       <div>
       <%= link_to "Create a new list", new_list_path, class: "btn btn-outline-success"%>
       </div>
 </div>
 
-
-<%# <%= image_tag "jared-murray-nuQH89C211c-unsplash.jpg", alt: "first image of theatre", class:"img-fluid max-width: 100%; and height: 100px" %>
-<%# <img src="../../app/assets/images/" class="img-fluid" alt="first image of theatre"> %>
-<%= image_tag "jared-murray-nuQH89C211c-unsplash.jpg", alt: "first image of theatre", class:"card-category" %>
-
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1562329265-95a6d7a83440?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG1vdmllJTIwdGhlYXRyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60')">
-  Movies
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bW92aWVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
+  <div class="container">
+    <h1>Create your own <strong>movies lists</strong>!</h1>
+     <%= link_to "Create a new list now", new_list_path, class: "btn btn-ghost"%>
+  </div>
 </div>
 
-<h4>My lists</h4>
-<div class="cards">
-  <% @lists.each do |list| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1562329265-95a6d7a83440?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG1vdmllJTIwdGhlYXRyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60')">
-  <%= link_to list.name, list %>
-  </div>
-    <% end %>
+<div class="container">
+  <h2 class="mb-3 p-5 text-center">My lists</h2>
+    <div>
+      <div class="my-grid">
+          <% @lists.each do |list| %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key %>')">
+          <%= link_to list.name, list %> </div>
+            <% end %>
+      </div>
+    </div>
 </div>

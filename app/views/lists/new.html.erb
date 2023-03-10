@@ -1,6 +1,17 @@
-<h1>Create a new list</h1>
+<div class="navbar navbar-light bg-light p-3">
+        <i class="fa-solid fa-clapperboard font-size: 2rem"></i>
+      <div>
+        <%= link_to "👈🏻 Back to all lists", root_path, class: "btn btn-outline-dark"%>
+      </div>
+</div>
+
+<div class="container">
+<h1 class="py-3">Create a new list</h1>
 
 <%= simple_form_for(@list) do |f| %>
     <%= f.input :name %>
-    <%= f.button :submit %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit, class: "btn btn-outline-success"%>
 <% end %>
+
+</div>

@@ -1,7 +1,7 @@
-<div class="navbar navbar-light bg-light py-3">
+<div class="navbar navbar-light bg-light p-3">
         <i class="fa-solid fa-clapperboard font-size: 2rem"></i>
       <div>
-        <%= link_to "👈🏻 Back to all lists", root_path, class: "navbar-brand small font-size: 1rem"%>
+        <%= link_to "👈🏻 Back to all lists", root_path, class: "btn btn-outline-dark"%>
         <%= link_to "Create a new bookmark", new_list_bookmark_path(@list), class: "btn btn-outline-info"%>
       </div>
 </div>
@@ -12,7 +12,7 @@
 </div>
 <div class="container">
   <div class="row mt-5">
-      <div class="col-4">
+      <div class="col-10 m-2">
     <% @bookmarks.each do |bookmark| %>
       <h4><%= bookmark.movie.title %> </h4>
       <div style = "background-image: url(<%=bookmark.movie.poster_url%>); height: 100vh; width: 500px;">
